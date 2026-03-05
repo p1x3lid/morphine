@@ -1,0 +1,11 @@
+.Trash-1000/
+result
+result/
+.direnv/
+.DS_Store
+logs/
+core*
+.TODO.md
+!core/
+!core.nix
+!coredns*

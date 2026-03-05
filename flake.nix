@@ -10,8 +10,6 @@
     determinate.url = "github:DeterminateSystems/determinate";
 
     affinity-nix.url = "github:mrshmllow/affinity-nix";
-
-    alejandra.url = "github:kamadorueda/alejandra";
   };
 
   # Flake ooutputs
@@ -20,22 +18,17 @@
     nixpkgs,
     determinate,
     home-manager,
-    alejandra,
     ...
   } @ inputs: let
-    username = "pixel";
-    system = "x86_64-linux";
-    hostname = "morphine";
+    myvars = import ./vars.nix;
   in {
-    nixosConfigurations.${hostname} = inputs.nixpkgs.lib.nixosSystem {
-      inherit system;
+    nixosConfigurations.${myvars.hostname} = inputs.nixpkgs.lib.nixosSystem {
+      system = myvars.system;
 
-      # NixOS modules
       modules = [
         # Load determinate module, which provides Determinate Nix
         inputs.determinate.nixosModules.default
 
-        ./modules/cache.nix # cache files
         ./modules/nixos/default.nix # main system config
 
         home-manager.nixosModules.default
@@ -46,14 +39,12 @@
 
             extraSpecialArgs = {
               inherit
-                system
-                username
-                hostname
+                myvars
                 inputs
                 ;
             };
 
-            users.${username} = ./modules/home-manager/default.nix;
+            users.${myvars.username} = ./home/home.nix;
 
             backupFileExtension = "hmbackup";
             backupCommand = ''
@@ -82,21 +73,17 @@
 
       specialArgs = {
         inherit
-          system
-          hostname
-          username
+          myvars
           inputs
           ;
       };
 
       pkgs = import inputs.nixpkgs {
-        inherit system;
+        system = myvars.system;
         config = {
           allowUnfree = true;
         };
       };
     };
-
-    formatter.${system} = alejandra.defaultPackage.${system};
   };
 }

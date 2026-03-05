@@ -1,6 +1,6 @@
 {...}: {
   imports = [
-    ./base
-    ./desktop
+    ./tui.nix
+    ./tools.nix
   ];
 }

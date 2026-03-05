@@ -1,6 +1,8 @@
 {...}: {
   imports = [
     ./base
-    ./desktop
+    ./niri
+
+    ./session-vars.nix
   ];
 }
