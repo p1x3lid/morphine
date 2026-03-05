@@ -1,0 +1,176 @@
+{
+  "reload_style_on_change": true,
+  "layer": "top",
+  "position": "top",
+  "spacing": 8,
+  "height": 34,
+  "modules-left": [
+    "custom/os",
+    "niri/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "group/tray",
+    "group/system",
+    "group/connectivity",
+    "group/audio",
+    "group/power"
+  ],
+  "niri/workspaces": {
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10",
+      "active": "󱓻"
+    }
+  },
+  "custom/os": {
+    "format": "",
+    "on-click": "fuzzel",
+    "on-click-right": "alacritty",
+    "tooltip": false
+  },
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%Y-%m-%d}\n{calendar}",
+    "interval": 60
+  },
+  "group/tray": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 200
+    },
+    "modules": [
+      "custom/tray-toggle",
+      "tray"
+    ]
+  },
+  "custom/tray-toggle": {
+    "format": "",
+    "tooltip": false
+  },
+  "group/system": {
+    "orientation": "inherit",
+    "modules": [
+      "cpu",
+      "memory",
+      "disk",
+      "battery"
+    ]
+  },
+  "cpu": {
+    "interval": 7,
+    "format": "󰍛 {usage}%",
+    "on-click": "foot btop"
+  },
+  "memory": {
+    "interval": 20,
+    "format": " {percentage}%"
+  },
+  "disk": {
+    "interval": 60,
+    "format": "󱂵 {percentage_free}%"
+  },
+  "battery": {
+    "interval": 60,
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "",
+    "states": {
+      "warning": 20,
+      "critical": 10
+    }
+  },
+  "group/connectivity": {
+    "orientation": "inherit",
+    "modules": [
+      "network",
+      "bluetooth"
+    ]
+  },
+  "network": {
+    "format-wifi": "󰤨",
+    "format-ethernet": "󰀂",
+    "format-disconnected": "󰤮",
+    "tooltip-format": "{ifname}\n⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",
+    "on-click": "foot impala",
+    "interval": 5
+  },
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "󰂲",
+    "tooltip-format": "Connected: {num_connections}",
+    "on-click": "foot bluetui"
+  },
+  "group/audio": {
+    "orientation": "inherit",
+    "modules": [
+      "pulseaudio"
+    ]
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-muted": "󰝟",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ],
+    "on-click": "foot wiremix",
+    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "reverse-scrolling": true
+  },
+  "group/power": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/lock",
+      "idle_inhibitor",
+      "custom/suspend",
+      "custom/reboot",
+      "custom/power"
+    ],
+    "drawer": {
+      "transition-duration": 300
+    }
+  },
+  "custom/lock": {
+    "format": "󰍁",
+    "on-click": "loginctl lock",
+    "tooltip": false
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    },
+    "tooltip": false
+  },
+  "custom/suspend": {
+    "format": "",
+    "on-click": "loginctl lock && systemctl suspend",
+    "tooltip": false
+  },
+  "custom/reboot": {
+    "format": "󰜉",
+    "on-click": "systemctl reboot",
+    "tooltip": false
+  },
+  "custom/power": {
+    "format": "⏻",
+    "on-click": "systemctl poweroff",
+    "tooltip": false
+  }
+}
