@@ -28,8 +28,8 @@
         "drm_kms_helper"
       ];
 
-      luks.devices."luks-0acafb9c-2ad2-4b0e-92d9-129ec246348c" = {
-        device = "/dev/nvme0n1p5";
+      luks.devices."luks-0cb4bc78-13ff-4891-ac25-50dd710308c6" = {
+        device = "/dev/nvme0n1p2";
         allowDiscards = true;
       };
     };
