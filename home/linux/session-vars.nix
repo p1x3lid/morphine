@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  lib,
   ...
 }: {
   ### Variables
@@ -35,6 +36,7 @@
     # misc
     "_JAVA_AWT_WM_NONREPARENTING" = "1";
     "QT_WAYLAND_DISABLE_WINDOWDECORATION" = "1";
+    "QT_QPA_PLATFORMTHEME" = lib.mkForce "qt6ct";
     "QT_QPA_PLATFORM" = "wayland";
     "SDL_VIDEODRIVER" = "wayland";
     "GDK_BACKEND" = "wayland";
@@ -67,16 +69,42 @@
   #   1. ~/.gtkrc-2.0
   #   2. ~/.config/gtk-3.0/settings.ini
   #   3. ~/.config/gtk-4.0/settings.ini
-  # gtk = {
-  # enable = true;
-  # colorScheme = "dark";
+  gtk = {
+    enable = true;
+    colorScheme = "dark";
+    theme = {
+      package = pkgs.kdePackages.breeze-gtk;
+      name = "Breeze-Dark";
+    };
 
-  # gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
-  # };
+    iconTheme = {
+      package = pkgs.kdePackages.breeze-icons;
+      name = "breeze-dark";
+    };
 
-  # qt = {
-  # enable = true;
-  # platformTheme.name = "kde";
-  # style.name = "breeze";
-  # };
+    gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
+    gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
+    gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
+  };
+
+  # DConf settings
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
+
+  qt = {
+    enable = true;
+    platformTheme.name = "qtct";
+    style.name = "breeze";
+  };
+
+  qt.qt6ctSettings = {
+    Appearance = {
+      style = "Breeze";
+      icon_theme = "breeze-dark";
+      standard_dialogs = "kde";
+    };
+  };
 }
