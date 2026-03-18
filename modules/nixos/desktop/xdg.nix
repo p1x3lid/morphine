@@ -40,7 +40,6 @@
       common = {
         # Use xdg-desktop-portal- for every portal interface...
         default = [
-          "kde"
           "gtk"
           "gnome"
         ];
@@ -59,7 +58,6 @@
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk # for provides file picker / OpenURI
       xdg-desktop-portal-gnome # for screensharing
-      kdePackages.xdg-desktop-portal-kde
     ];
   };
 }

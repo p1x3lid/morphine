@@ -17,7 +17,7 @@
     ./packages.nix
     ./virtualisation.nix
     ./xdg.nix
-    ./plasma.nix
+    # ./plasma.nix
   ];
 
   system = {

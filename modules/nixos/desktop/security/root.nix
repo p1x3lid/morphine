@@ -4,10 +4,10 @@
   ...
 }: {
   security = {
-    # Disable sudo
+    # Disable sudo and use doas + run0 for root
     sudo.enable = false;
-    # doas.enable = true;
-    run0.enableSudoAlias = true;
+    doas.enable = true; # Whether to enable the doas command, which allows non-root users to execute commands as root.
+    run0.enableSudoAlias = true; # Whether to enable make sudo an alias to run0..
 
     wrappers = {
       su = {
