@@ -7,20 +7,16 @@
   # security with polkit
   security.polkit.enable = true;
 
-  # enable PAM for hyprlock
-  security.pam.services.hyprlock = {};
-
-  security.pam.services.${myvars.username}.kwallet = {
-    enable = true;
-    package = pkgs.kdePackages.kwallet-pam;
+  # security with gnome-kering
+  services.gnome = {
+    gnome-keyring.enable = true;
+    # Use gnome keyring's SSH Agent
+    # https://wiki.gnome.org/Projects/GnomeKeyring/Ssh
+    gcr-ssh-agent.enable = false;
   };
-
-  environment.systemPackages = [
-    # Tool to manage the passwords on your system
-    pkgs.kdePackages.kwalletmanager
-  ];
-
-  security.pam.services.greetd.enableKwallet = true;
+  # seahorse is a GUI App for GNOME Keyring.
+  programs.seahorse.enable = true;
+  security.pam.services.greetd.enableGnomeKeyring = true;
 
   security = {
     # Kernel Security Settings

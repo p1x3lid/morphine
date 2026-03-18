@@ -1,10 +1,8 @@
 {pkgs, ...}: {
   imports = [
     ./hypr
-    ./waybar
+    ./noctalia
 
-    ./fuzzel.nix
-    ./mako.nix
     ./niri.nix
   ];
 }

@@ -41,7 +41,7 @@
     "SDL_VIDEODRIVER" = "wayland";
     "GDK_BACKEND" = "wayland";
     "XDG_SESSION_TYPE" = "wayland";
-    "XDG_CURRENT_DESKTOP" = "kde";
+    # "XDG_CURRENT_DESKTOP" = "gtk";
     "SSH_AUTH_SOCK" = "$HOME/.bitwarden-ssh-agent.sock";
   };
 
@@ -72,27 +72,27 @@
   gtk = {
     enable = true;
     colorScheme = "dark";
-    theme = {
-      package = pkgs.kdePackages.breeze-gtk;
-      name = "Breeze-Dark";
-    };
+    # theme = {
+    #   package = pkgs.kdePackages.breeze-gtk;
+    #   name = "Breeze-Dark";
+    # };
 
-    iconTheme = {
-      package = pkgs.kdePackages.breeze-icons;
-      name = "breeze-dark";
-    };
+    # iconTheme = {
+    #   package = pkgs.kdePackages.breeze-icons;
+    #   name = "breeze-dark";
+    # };
 
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
-    gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
-    gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
+    # gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
+    # gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
   };
 
   # DConf settings
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-    };
-  };
+  # dconf.settings = {
+  #   "org/gnome/desktop/interface" = {
+  #     color-scheme = "prefer-dark";
+  #   };
+  # };
 
   qt = {
     enable = true;
