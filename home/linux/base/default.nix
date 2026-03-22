@@ -1,8 +1,9 @@
 {...}: {
   imports = [
+    ./editors
+
     ./tui.nix
     ./tools.nix
-
-    ./editors
+    ./session-vars.nix
   ];
 }

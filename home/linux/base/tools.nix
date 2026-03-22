@@ -7,5 +7,7 @@
     hunspell # Spell checker
     hunspellDicts.ru_RU
     hunspellDicts.en-us
+
+    bazaar
   ];
 }
