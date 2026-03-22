@@ -6,7 +6,6 @@
   ...
 }: {
   imports = [
-    ./packages
     ./core
     ./linux
   ];
