@@ -1,10 +1,4 @@
-{
-  pkgs,
-  myvars,
-  config,
-  lib,
-  ...
-}: {
+{myvars, ...}: {
   imports = [
     ./avahi.nix
     ./firewall.nix
@@ -12,4 +6,6 @@
     ./throne.nix
     ./iwd.nix
   ];
+
+  networking.hostName = myvars.hostName;
 }

@@ -24,8 +24,6 @@
     "NIXOS_OZONE_WL" = "1"; # for any ozone-based browser & electron apps to run on wayland
     "MOZ_ENABLE_WAYLAND" = "1"; # for firefox to run on wayland
     "MOZ_WEBRENDER" = "1";
-    # enable native Wayland support for most Electron apps
-    "ELECTRON_OZONE_PLATFORM_HINT" = "auto";
 
     # Tools
     "EDITOR" = "hx";
@@ -36,13 +34,13 @@
     # misc
     "_JAVA_AWT_WM_NONREPARENTING" = "1";
     "QT_WAYLAND_DISABLE_WINDOWDECORATION" = "1";
-    "QT_QPA_PLATFORMTHEME" = lib.mkForce "qt6ct";
-    "QT_QPA_PLATFORM" = "wayland";
     "SDL_VIDEODRIVER" = "wayland";
     "GDK_BACKEND" = "wayland";
     "XDG_SESSION_TYPE" = "wayland";
     # "XDG_CURRENT_DESKTOP" = "gtk";
     "SSH_AUTH_SOCK" = "$HOME/.bitwarden-ssh-agent.sock";
+    # Point gsettings to the compiled schemas
+    "GSETTINGS_SCHEMA_DIR" = "${pkgs.gsettings-desktop-schemas}/share/gsettings-schemas/${pkgs.gsettings-desktop-schemas.name}/glib-2.0/schemas";
   };
 
   # If your themes for mouse cursor, icons or windows don’t load correctly,
@@ -71,6 +69,13 @@
   #   3. ~/.config/gtk-4.0/settings.ini
   gtk = {
     enable = true;
+<<<<<<< Updated upstream
+    iconTheme = {
+      name = "Papirus";
+      package = pkgs.papirus-icon-theme;
+    };
+=======
+<<<<<<< Updated upstream
     colorScheme = "dark";
     # theme = {
     #   package = pkgs.kdePackages.breeze-gtk;
@@ -81,30 +86,35 @@
     #   package = pkgs.kdePackages.breeze-icons;
     #   name = "breeze-dark";
     # };
+=======
+    iconTheme = {
+      package = pkgs.papirus-icon-theme;
+      name = "Papirus";
+    };
+    cursorTheme = {
+      package = pkgs.apple-cursor;
+      name = "macOS";
+      size = 36;
+    };
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
-    # gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
-    # gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
+    gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
+    gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
   };
 
-  # DConf settings
-  # dconf.settings = {
-  #   "org/gnome/desktop/interface" = {
-  #     color-scheme = "prefer-dark";
-  #   };
+  # qt = {
+  # enable = true;
+  #   platformTheme.name = "qtct";
+  #   style.name = "breeze";
   # };
 
-  qt = {
-    enable = true;
-    platformTheme.name = "qtct";
-    style.name = "breeze";
-  };
-
-  qt.qt6ctSettings = {
-    Appearance = {
-      style = "Breeze";
-      icon_theme = "breeze-dark";
-      standard_dialogs = "kde";
-    };
-  };
+  # qt.qt6ctSettings = {
+  #   Appearance = {
+  #     style = "Breeze";
+  #     icon_theme = "breeze-dark";
+  #     standard_dialogs = "kde";
+  #   };
+  # };
 }

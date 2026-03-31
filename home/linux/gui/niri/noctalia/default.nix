@@ -14,15 +14,15 @@
       pkgs.gpu-screen-recorder # recoding screen
     ]);
 
-  xdg.configFile = let
-    mkSymlink = config.lib.file.mkOutOfStoreSymlink;
-    confPath = "${config.home.homeDirectory}/.nix/morphine/home/linux/niri/noctalia/";
-  in {
-    # NOTE: use config dir as noctalia config because config is not only settings.json
-    # https://github.com/noctalia-dev/noctalia-shell/blob/main/nix/home-module.nix#L211-L220
-    "noctalia".source = mkSymlink "${confPath}/config";
-    # "qt6ct/qt6ct.conf".source = mkSymlink "${confPath}/qt6ct.conf";
-  };
+  # xdg.configFile = let
+  # mkSymlink = config.lib.file.mkOutOfStoreSymlink;
+  # confPath = "${config.home.homeDirectory}/.nix/morphine/home/linux/niri/noctalia/";
+  # in {
+  # NOTE: use config dir as noctalia config because config is not only settings.json
+  # https://github.com/noctalia-dev/noctalia-shell/blob/main/nix/home-module.nix#L211-L220
+  # "noctalia".source = mkSymlink "${confPath}/config";
+  # "qt6ct/qt6ct.conf".source = mkSymlink "${confPath}/qt6ct.conf";
+  # };
 
   systemd.user.services.noctalia-shell = {
     Unit = {
