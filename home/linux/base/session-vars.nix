@@ -69,10 +69,35 @@
   #   3. ~/.config/gtk-4.0/settings.ini
   gtk = {
     enable = true;
+<<<<<<< Updated upstream
     iconTheme = {
       name = "Papirus";
       package = pkgs.papirus-icon-theme;
     };
+=======
+<<<<<<< Updated upstream
+    colorScheme = "dark";
+    # theme = {
+    #   package = pkgs.kdePackages.breeze-gtk;
+    #   name = "Breeze-Dark";
+    # };
+
+    # iconTheme = {
+    #   package = pkgs.kdePackages.breeze-icons;
+    #   name = "breeze-dark";
+    # };
+=======
+    iconTheme = {
+      package = pkgs.papirus-icon-theme;
+      name = "Papirus";
+    };
+    cursorTheme = {
+      package = pkgs.apple-cursor;
+      name = "macOS";
+      size = 36;
+    };
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
     gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;

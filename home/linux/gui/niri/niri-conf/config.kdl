@@ -224,8 +224,8 @@ layout {
 cursor {
     // Change the theme and size of the cursor as well as set the
     // `XCURSOR_THEME` and `XCURSOR_SIZE` env variables.
-    // xcursor-theme "default"
-    xcursor-size 32
+    xcursor-theme "macOS"
+    xcursor-size 36
 }
 
 // Add lines like this to spawn processes at startup.
@@ -234,8 +234,7 @@ cursor {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-// spawn-at-startup "waybar & stasis & hyprpaper"
-spawn-sh-at-startup "waybar & hypridle & hyprpaper"
+// spawn-at-startup "waybar"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
