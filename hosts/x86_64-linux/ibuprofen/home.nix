@@ -1,13 +1,11 @@
 {
-  config,
   myvars,
-  pkgs,
   inputs,
   ...
 }: {
   imports = [
-    ./core
-    ./linux
+    ../../../home/core
+    ../../../home/linux
   ];
 
   home.username = myvars.username;
