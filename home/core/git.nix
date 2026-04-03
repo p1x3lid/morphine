@@ -122,4 +122,7 @@
 
   # Yet another Git TUI (written in rust).
   programs.gitui.enable = false;
+  programs.lazygit.settings = {
+    git.overrideGpg = true;
+  };
 }
