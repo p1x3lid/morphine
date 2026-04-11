@@ -28,6 +28,7 @@ in
           backupFileExtension = "hmbackup";
         };
       }
+      inputs.niri-flake.nixosModules.niri
 
       # allow unfree per-host (moves it out of flake.nix)
       {nixpkgs.config.allowUnfree = true;}
