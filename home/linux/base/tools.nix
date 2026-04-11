@@ -8,6 +8,16 @@
     hunspellDicts.ru_RU
     hunspellDicts.en-us
 
+
+    # Screen tools
+    grim
+    slurp
+    tesseract
+    zbar
+    wl-screenrec
+    gifski
+    translate-shell
+
     bazaar
   ];
 }
