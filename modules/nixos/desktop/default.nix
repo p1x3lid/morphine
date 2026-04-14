@@ -17,7 +17,6 @@
     ./packages.nix
     ./virtualisation.nix
     ./xdg.nix
-    # ./plasma.nix
   ];
 
   programs.niri.enable = true;
