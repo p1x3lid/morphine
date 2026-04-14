@@ -26,8 +26,8 @@
     "MOZ_WEBRENDER" = "1";
 
     # Tools
-    "EDITOR" = "hx";
-    "VISUAL" = "hx";
+    "EDITOR" = "nvim";
+    "VISUAL" = "nvim";
     "PAGER" = "bat --paging=always";
     "PF_INFO" = "ascii title os kernel uptime pkgs memory";
 
@@ -37,6 +37,8 @@
     "SDL_VIDEODRIVER" = "wayland";
     "GDK_BACKEND" = "wayland";
     "XDG_SESSION_TYPE" = "wayland";
+    "QT_QPA_PLATFORMTHEME" = lib.mkForce "qt6ct";
+    "QS_ICON_THEME" = "qt6ct";
     "SSH_AUTH_SOCK" = "$HOME/.bitwarden-ssh-agent.sock";
     # Point gsettings to the compiled schemas
     "GSETTINGS_SCHEMA_DIR" = "${pkgs.gsettings-desktop-schemas}/share/gsettings-schemas/${pkgs.gsettings-desktop-schemas.name}/glib-2.0/schemas";
@@ -84,17 +86,23 @@
     gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
   };
 
-  # qt = {
-  # enable = true;
-  #   platformTheme.name = "qtct";
-  #   style.name = "breeze";
-  # };
+  qt = {
+    enable = true;
+    platformTheme.name = "qtct";
+    style.name = "breeze";
+  };
 
-  # qt.qt6ctSettings = {
-  #   Appearance = {
-  #     style = "Breeze";
-  #     icon_theme = "breeze-dark";
-  #     standard_dialogs = "kde";
-  #   };
-  # };
+  qt.qt5ctSettings = {
+    Appearance = {
+      style = "breeze";
+      icon_theme = "Papirus";
+    };
+  };
+
+   qt.qt6ctSettings = {
+     Appearance = {
+  style = "breeze";
+       icon_theme = "Papirus";
+     };
+   };
 }

@@ -55,6 +55,8 @@
             {
               id = "Launcher";
               useDistroLogo = true;
+              enableColarization = true;
+              colorizeSystemIcon = "Primary";
             }
             {
               id = "Workspace";
@@ -121,7 +123,7 @@
             {
               id = "Volume";
               displayMode = "onhover";
-              middleClickCommand = "pwvucontrol || pavucontrol";
+              middleClickCommand = "foot wiremix";
             }
             {
               id = "Brightness";
@@ -134,6 +136,7 @@
             {
               id = "ControlCenter";
               useDistroLogo = false;
+              icon = "settings";
             }
           ];
         };
@@ -183,10 +186,17 @@
         syncGsettings = true;
       };
 
+      systemMonitor = {
+        externalMonitor = "foot btop";
+      };
+
+      noctaliaPerformance = {
+        disableWallpaper = false;
+        disableDesktopWidgets = true;
+      };
+
       dock = {
-        dockType = "attached";
-        size = 1.5;
-        displayMode = "auto_hide";
+        enabled = false;
       };
 
       network = {
