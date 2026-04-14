@@ -25,7 +25,7 @@
       "init_on_free=1"
       # randomizes page allocator freelist, improving security by
       # making page allocations less predictable
-      "page_alloc.shuffel=1"
+      "page_alloc.shuffle=1"
       # enables Kernel Page Table Isolation, which mitigates Meltdown and
       # prevents some KASLR bypasses
       "pti=on"
