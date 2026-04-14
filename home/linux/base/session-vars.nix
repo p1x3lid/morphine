@@ -99,10 +99,10 @@
     };
   };
 
-   qt.qt6ctSettings = {
-     Appearance = {
-  style = "breeze";
-       icon_theme = "Papirus";
-     };
-   };
+  qt.qt6ctSettings = {
+    Appearance = {
+      style = "breeze";
+      icon_theme = "Papirus";
+    };
+  };
 }
