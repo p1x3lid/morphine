@@ -3,8 +3,12 @@
     enable = true;
 
     interactiveShellInit = ''
-      set fish_greeting # Disable greeting
-      pfetch
+          set fish_greeting # Disable greeting
+          fish_vi_key_bindings
+      set -g fish_vi_force_cursor 1
+      set fish_cursor_insert line
+      set fish_cursor_default block
+          pfetch
     '';
 
     plugins = [
@@ -17,10 +21,6 @@
       #   name = "hydro";
       #   src = pkgs.fishPlugins.hydro.src;
       # }
-      {
-        name = "fish-you-should-use";
-        src = pkgs.fishPlugins.fish-you-should-use.src;
-      }
       {
         name = "bass";
         src = pkgs.fishPlugins.bass.src;
@@ -61,6 +61,7 @@
       dfh = "df -h";
       duh = "du -h -d1";
       free = "free -h";
+      n = "nvim";
 
       # Get the error messages from journalctl
       jctl = "journalctl -p 3 -xb";
