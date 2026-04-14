@@ -20,6 +20,8 @@
     # ./plasma.nix
   ];
 
+  programs.niri.enable = true;
+
   system = {
     configurationRevision = inputs.self.rev or "dirty";
 

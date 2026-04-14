@@ -12,11 +12,11 @@
     gnome-keyring.enable = true;
     # Use gnome keyring's SSH Agent
     # https://wiki.gnome.org/Projects/GnomeKeyring/Ssh
-    gcr-ssh-agent.enable = false;
+    # gcr-ssh-agent.enable = false;
   };
   # seahorse is a GUI App for GNOME Keyring.
-  programs.seahorse.enable = true;
-  security.pam.services.greetd.enableGnomeKeyring = true;
+  # programs.seahorse.enable = true;
+  # security.pam.services.greetd.enableGnomeKeyring = true;
 
   security = {
     # Kernel Security Settings
