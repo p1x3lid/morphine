@@ -26,7 +26,6 @@
       myvars.username
       "users"
       "wheel"
-      "networkmanager" # for nmtui / nm-connection-editor
       "podman"
       "i2c"
       "libvirtd" # virt-viewer / qemu
