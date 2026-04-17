@@ -44,6 +44,7 @@
     btop
     chezmoi
     trashy
+    file # Program that shows the type of files
     grc # Generic text coloriser
 
     # misc
