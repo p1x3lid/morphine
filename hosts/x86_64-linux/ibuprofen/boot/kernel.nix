@@ -45,7 +45,6 @@
       # prevents user space code excalation
       "lockdown=confidentiality"
       "loglevel=3"
-      "rd.udev.log_level=3"
       "udev.log_priority=3"
       "rd.udev.log_level=3"
     ];
@@ -63,7 +62,7 @@
         # should be enabled along with bpf above
         # "net.core.bpf_jit_harden" = 2;
         # restrict loading TTY line disciplines to the CAP_SYS_MODULE
-        "dev.tty.ldisk_autoload" = 0;
+        "dev.tty.ldisc_autoload" = 0;
         # prevent exploit of use-after-free flaws
         "vm.unprivileged_userfaultfd" = 0;
         # kexec is used to boot another kernel during runtime and can be abused
@@ -95,8 +94,6 @@
 
         # Randomize memory
         "kernel.randomize_va_space" = 2;
-        # Exec Shield (Stack protection)
-        "kernel.exec-shield" = 1;
 
         ## TCP optimization
         # TCP Fast Open is a TCP extension that reduces network latency by packing
