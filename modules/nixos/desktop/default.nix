@@ -15,7 +15,6 @@
     ./power.nix
     ./login-manager.nix
     ./packages.nix
-    ./virtualisation.nix
     ./xdg.nix
   ];
 

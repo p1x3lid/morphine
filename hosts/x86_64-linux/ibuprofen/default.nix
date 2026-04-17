@@ -16,6 +16,7 @@ in
 
       ./hardware.nix
       ./filesystems.nix
+      ./virtualisation.nix
       ../../../modules/nixos/default.nix
 
       inputs.home-manager.nixosModules.default
