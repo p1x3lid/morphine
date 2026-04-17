@@ -3,6 +3,6 @@
     ./niri
 
     ./tools.nix
-    ./entertaiment.nix
+    ./entertainment.nix
   ];
 }
