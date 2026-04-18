@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.foot = {
     # foot is designed only for Linux
     enable = pkgs.stdenv.isLinux;
@@ -19,9 +20,6 @@
         font = "MesloLGM Nerd Font:size=13";
         dpi-aware = "no"; # scale via window manager instead
         resize-keep-grid = "no"; # do not resize the window on font resizing
-
-        # Spawn a fish via `bash`
-        shell = "${pkgs.bash}/bin/bash --login -c 'fish'";
       };
 
       mouse = {

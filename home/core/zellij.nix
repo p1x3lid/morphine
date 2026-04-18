@@ -1,12 +1,13 @@
-{...}: {
+{ ... }:
+{
   programs.zellij = {
     enable = true;
+    enableZshIntegration = true;
     enableFishIntegration = true;
     exitShellOnExit = true;
     settings = {
       theme = "gruvbox-dark";
       show_startup_tips = false;
-      default_shell = "fish";
     };
 
     extraConfig = ''

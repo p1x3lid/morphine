@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   programs.alacritty = {
     enable = true;
 
@@ -50,8 +51,6 @@
           action = "Copy";
         }
       ];
-
-      terminal.shell = "fish";
     };
 
     theme = "gruvbox_material_hard_dark";

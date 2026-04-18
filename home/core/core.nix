@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   # CLI / dev / TUI tools used by the user
   home.packages = with pkgs; [
     # nix related
@@ -83,7 +84,7 @@
         use_pager = true;
       };
       updates = {
-        auto_update = false;
+        auto_update = true;
         auto_update_interval_hours = 720;
       };
     };
@@ -109,6 +110,7 @@
   programs.zoxide = {
     enable = true;
     enableBashIntegration = true;
+    enableZshIntegration = true;
     enableFishIntegration = true;
     enableNushellIntegration = true;
   };
@@ -120,6 +122,7 @@
   programs.atuin = {
     enable = true;
     enableBashIntegration = true;
+    enableZshIntegration = true;
     enableFishIntegration = true;
     enableNushellIntegration = true;
   };
@@ -128,6 +131,7 @@
   programs.carapace = {
     enable = true;
     enableBashIntegration = true;
+    enableZshIntegration = true;
     enableFishIntegration = true;
     enableNushellIntegration = true;
   };
