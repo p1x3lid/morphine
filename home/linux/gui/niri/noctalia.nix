@@ -55,8 +55,8 @@
             {
               id = "Launcher";
               useDistroLogo = true;
-              enableColarization = true;
-              colorizeSystemIcon = "Primary";
+              enableColorization = true;
+              colorizeSystemIcon = "None";
             }
             {
               id = "Workspace";
@@ -169,7 +169,14 @@
 
       wallpaper = {
         directory = "${config.home.homeDirectory}/Pictures/Wallpapers";
-        transitionType = ["fade" "disc" "stripes" "wipe" "pixelate" "honeycomb"];
+        transitionType = [
+          "fade"
+          "disc"
+          "stripes"
+          "wipe"
+          "pixelate"
+          "honeycomb"
+        ];
       };
 
       appLauncher = {
