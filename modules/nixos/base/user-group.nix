@@ -1,6 +1,6 @@
 {
+  pkgs,
   myvars,
-  config,
   ...
 }: {
   # Don't allow mutation of users outside the config.
@@ -21,6 +21,7 @@
 
   users.users."${myvars.username}" = {
     home = "/home/${myvars.username}";
+    shell = pkgs.zsh;
     isNormalUser = true;
     extraGroups = [
       myvars.username

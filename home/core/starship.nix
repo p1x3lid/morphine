@@ -3,6 +3,7 @@
     enable = true;
 
     enableBashIntegration = true;
+    enableZshIntegration = true;
     enableFishIntegration = true;
     enableNushellIntegration = true;
 
@@ -10,6 +11,7 @@
     settings = {
       # Get editor completions based on the config schema
       "$schema" = "https://starship.rs/config-schema.json";
+
       character = {
         success_symbol = "[➜](bold green)";
         error_symbol = "[✗](bold red)";
@@ -20,12 +22,6 @@
         vimcmd_replace_symbol = "[R](bold red)";
         vimcmd_replace_one_symbol = "[r](bold red)";
       };
-
-      kubernetes = {
-        symbol = "⛵";
-        disabled = false;
-      };
-      os.disabled = false;
     };
   };
 }

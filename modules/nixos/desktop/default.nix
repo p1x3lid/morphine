@@ -19,6 +19,7 @@
   ];
 
   programs.niri.enable = true;
+  programs.zsh.enable = true;
 
   system = {
     configurationRevision = inputs.self.rev or "dirty";

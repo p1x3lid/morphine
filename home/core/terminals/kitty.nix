@@ -16,7 +16,6 @@
 
       cursor_trail = 2;
       cursor_trail_decay = "0.1 0.4";
-      shell = "zellij";
       allow_remote_control = "no";
     };
 
