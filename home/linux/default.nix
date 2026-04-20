@@ -1,7 +1,6 @@
 {...}: {
   imports = [
     ./base
-    ./cli
     ./gui
   ];
 }
