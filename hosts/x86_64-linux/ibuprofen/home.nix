@@ -1,6 +1,5 @@
 {
   myvars,
-  inputs,
   ...
 }: {
   imports = [

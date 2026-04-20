@@ -1,7 +1,5 @@
 {
   config,
-  myvars,
-  pkgs,
   ...
 }: {
   # security with polkit

@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ ...}: {
   programs.helix.enable = true;
 
   # See <https://docs.helix-editor.com/configuration.html>

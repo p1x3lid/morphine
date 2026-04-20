@@ -27,7 +27,7 @@
   };
 
   # Flake ooutputs
-  outputs = {self, ...} @ inputs: let
+  outputs = { ...} @ inputs: let
     hosts = import ./hosts {inherit inputs;};
   in {
     nixosConfigurations = hosts.nixos;
