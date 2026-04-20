@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   # CLI / dev / TUI tools used by the user
   home.packages = with pkgs; [
     # nix related

@@ -1,7 +1,4 @@
-{
-  myvars,
-  ...
-}: {
+{myvars, ...}: {
   imports = [
     ../../../home/core
     ../../../home/linux

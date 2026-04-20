@@ -1,7 +1,4 @@
-{
-  config,
-  ...
-}: {
+{config, ...}: {
   # security with polkit
   security.polkit.enable = true;
 
