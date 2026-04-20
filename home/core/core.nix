@@ -135,4 +135,6 @@
     enableFishIntegration = true;
     enableNushellIntegration = true;
   };
+
+  programs.home-manager.enable = true;
 }

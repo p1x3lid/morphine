@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, myvars, ...}: {
   programs.zsh = {
     enable = true;
 
@@ -20,8 +20,11 @@
       }
       zle -N zle-keymap-select
       zle -N zle-line-init
-
-      pfetch
+      if [[ "$OSTYPE" == darwin* ]]; then
+        export SSH_AUTH_SOCK="$HOME/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock"
+      else
+        export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
+      fi
     '';
 
     plugins = [

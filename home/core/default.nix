@@ -5,6 +5,7 @@
     ./terminals
 
     ./core.nix
+    ./cache.nix
     ./starship.nix
     ./yazi.nix
     ./git.nix
