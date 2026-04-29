@@ -1,7 +1,7 @@
 {myvars, ...}: {
   imports = [
     ../../../home/core
-    ../../../home/linux
+    # ../../../home/linux
   ];
 
   home.username = myvars.username;

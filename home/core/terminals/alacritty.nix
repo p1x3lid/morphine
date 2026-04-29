@@ -1,6 +1,6 @@
 {...}: {
   programs.alacritty = {
-    enable = true;
+    # enable = true;
 
     settings = {
       env.TERM = "xterm-256color";
@@ -34,7 +34,7 @@
           y = 14;
         };
 
-        decorations = "none";
+        decorations = "Full";
       };
 
       keyboard.bindings = [

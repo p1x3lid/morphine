@@ -31,5 +31,6 @@
     hosts = import ./hosts {inherit inputs;};
   in {
     nixosConfigurations = hosts.nixos;
+    homeConfigurations  = hosts.home;
   };
 }
